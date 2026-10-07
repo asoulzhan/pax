@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-image: radial-gradient(circle at top, rgb(255 255 255 / 0.7), transparent 42%);
+}
+
+.dark body,
+html.dark body {
+  background-image: radial-gradient(circle at top, rgb(24 24 27 / 0.9), transparent 48%);
+}
+
+.habit-card {
+  animation: rise 420ms ease both;
+}
+
+.habit-card:nth-child(1) { animation-delay: 20ms; }
+.habit-card:nth-child(2) { animation-delay: 60ms; }
+.habit-card:nth-child(3) { animation-delay: 100ms; }
+.habit-card:nth-child(4) { animation-delay: 140ms; }
+.habit-card:nth-child(5) { animation-delay: 180ms; }
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.progress-fill {
+  transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.check-btn.done {
+  animation: pop 380ms ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.92); }
+  55% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.week-dot {
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+
+.week-dot.filled {
+  transform: scale(1.08);
+}
+
+.category-chip[aria-selected="true"] span:first-child {
+  background: rgb(255 255 255 / 0.2);
+}
+
+.finance-cta {
+  animation: rise 500ms ease both;
+}
+
+.page-enter {
+  animation: rise 420ms ease both;
+}
